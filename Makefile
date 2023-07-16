@@ -1,6 +1,6 @@
 INPUT_FILES=$(wildcard inputs/*.png)
-OUTDAT_FILES=$(patsubst inputs/%.dat,outdat/%.dat,$(INPUT_FILES))
-OUTPNG_FILES=$(patsubst inputs/%.dat,outpng/%.png,$(INPUT_FILES))
+OUTDAT_FILES=$(patsubst inputs/%.png,outdat/%.dat,$(INPUT_FILES))
+OUTPNG_FILES=$(patsubst inputs/%.png,outpng/%.png,$(INPUT_FILES))
 
 CFLAGS=-O2 -Iout
 

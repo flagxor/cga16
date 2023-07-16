@@ -18,3 +18,5 @@ able to be BLOADed by GWBASIC into B800:0000.
 It assumes you have the
 [Farfeld](https://tools.suckless.org/farbfeld/)
 tools installed.
+
+![Sample Conversion of Image from Quest for Glory](samples/quest1.png)
