@@ -20,7 +20,7 @@ The data is saved in a 16k + 7 byte header format,
 able to be BLOADed by GWBASIC into B800:0000.
 
 It assumes you have the
-[Farfeld](https://tools.suckless.org/farbfeld/)
+[Farbfeld](https://tools.suckless.org/farbfeld/)
 tools installed.
 
 
