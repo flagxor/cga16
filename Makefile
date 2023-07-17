@@ -6,6 +6,7 @@ CFLAGS=-O2 -Iout
 
 all: out/cga2im out/im2cga
 
+.PHONY: images
 images: $(OUTPNG_FILES)
 
 out:
@@ -23,11 +24,14 @@ out/cga2im: out/cga2im.o out/common.o
 
 out/im2cga: out/im2cga.o out/common.o
 
+.SECONDARY: $(OUTDAT_FILES)
+
 outpng/%.png: outdat/%.dat out/cga2im
 	./out/cga2im $< $@
 
 outdat/%.dat: inputs/%.png out/im2cga
 	./out/im2cga $< $@
 
+.PHONY: clean
 clean:
 	rm -rf out/
