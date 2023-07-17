@@ -29,10 +29,18 @@ static int DistanceC(uint64_t x, uint64_t y) {
 }
 
 static uint64_t Average(uint64_t x, uint64_t y) {
-  uint64_t r = (((x >> 48) & 0xffff) + ((y >> 48) & 0xffff)) / 2;
-  uint64_t g = (((x >> 32) & 0xffff) + ((y >> 32) & 0xffff)) / 2;
-  uint64_t b = (((x >> 16) & 0xffff) + ((y >> 16) & 0xffff)) / 2;
-  uint64_t a = ((x & 0xffff) + (y & 0xffff)) / 2;
+  uint64_t rx = (x >> 48) & 0xffff;
+  uint64_t gx = (x >> 32) & 0xffff;
+  uint64_t bx = (x >> 16) & 0xffff;
+  uint64_t ax = x & 0xffff;
+  uint64_t ry = (y >> 48) & 0xffff;
+  uint64_t gy = (y >> 32) & 0xffff;
+  uint64_t by = (y >> 16) & 0xffff;
+  uint64_t ay = y & 0xffff;
+  uint64_t r = (rx + ry) / 2;
+  uint64_t g = (gx + gy) / 2;
+  uint64_t b = (bx + by) / 2;
+  uint64_t a = (ax + ay) / 2;
   return (r << 48) | (g << 32) | (b << 16) | a;
 }
 

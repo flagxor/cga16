@@ -3,6 +3,7 @@ OUTDAT_FILES=$(patsubst inputs/%.png,outdat/%.dat,$(INPUT_FILES))
 OUTPNG_FILES=$(patsubst inputs/%.png,outpng/%.png,$(INPUT_FILES))
 
 CFLAGS=-O2 -Iout
+LDFLAGS=-lm
 
 all: out/cga2im out/im2cga
 
