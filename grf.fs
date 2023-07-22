@@ -263,6 +263,16 @@ MAKE-CHAR2NIB
             ['] PLOT4 IS PLOT
             160 WIDTH ! 200 HEIGHT ! ;
 
+( MEMORY ALLOCATION )
+
+CODE ALLOCATE-RAW
+  $48 #, AH MOV,
+  $21 #, INT,
+  ( Need error handling )
+  AX PUSH,
+  NXT,
+END-CODE
+: ALLOCATE ( N -- N ) ALLOCATE-RAW SWAP DUP 8 = OVER 7 = OR 0= IF NIP 0 THEN ;
 
 ( GRAPHICS TESTS )
 
